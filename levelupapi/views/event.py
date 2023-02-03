@@ -18,15 +18,25 @@ class EventView(ViewSet):
         serializer = EventSerializer(event)
         return Response(serializer.data)
 
-    def list(self, request):
-        """Handle GET requests to get all game types
+
+    def list(self, request, game_id=None):
+        """Handle GET requests to get a game by id
 
         Returns:
-            Response -- JSON serialized list of game types
+            Response -- JSON serialized game type
         """
-        events = Event.objects.all()
-        serializer = EventSerializer(events, many=True)
-        return Response(serializer.data)
+        if game_id:
+            try:
+                event = Event.objects.get(game_id=game_id)
+            except Event.DoesNotExist:
+                return Response({"error": "Event not found"}, status=status.HTTP_404_NOT_FOUND)
+            serializer = EventSerializer(event)
+            return Response(serializer.data)
+        else:
+            events = Event.objects.all()
+            serializer = EventSerializer(events, many=True)
+            return Response(serializer.data)
+
 
 class EventSerializer(serializers.ModelSerializer):
     """JSON serializer for game types
@@ -34,3 +44,4 @@ class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
         fields = ('id', 'datetime', 'description', 'game_id', 'organizer_id')
+        depth = 1
