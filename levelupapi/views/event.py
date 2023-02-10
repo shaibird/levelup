@@ -14,15 +14,15 @@ class EventView(ViewSet):
         Returns:
             Response -- JSON serialized event instance
         """
-        gamer = Gamer.objects.get(user=request.auth.user)
+        gamer = Gamer.objects.get(user=request.auth.user) 
+        game = Game.objects.get(pk=request.data["game"])
 
         event = Event()
         event.time = request.data["time"]
         event.date = request.data["date"]
         event.description = request.data["description"]
         event.organizer = gamer
-
-        game = Game.objects.get(pk=request.data["gameId"])
+       
         event.game = game
 
         try:
