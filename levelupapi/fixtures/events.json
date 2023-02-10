@@ -1,0 +1,35 @@
+[
+    {
+        "model": "levelupapi.event",
+        "pk": 1,
+        "fields": {
+            "organizer": 1,
+            "description": "Please work",
+            "game": 1,
+            "date": "2021-10-04",
+            "time": "12:00"
+        }
+    },
+    {
+        "model": "levelupapi.event",
+        "pk": 2,
+        "fields": {
+            "organizer": 1,
+            "description": "We'll meet at the coffee shop",
+            "game": 2,
+            "date": "2021-08-14",
+            "time": "19:30"
+        }
+    },
+    {
+        "model": "levelupapi.event",
+        "pk": 3,
+        "fields": {
+            "organizer": 1,
+            "description": "Fingers crossed",
+            "game": 3,
+            "date": "2021-04-20",
+            "time": "8:00"
+        }
+    }
+]

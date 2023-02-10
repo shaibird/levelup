@@ -3,11 +3,12 @@
         "model": "levelupapi.game",
         "pk": 1,
         "fields": {
-            "title": "monopoly",
+            "title": "Monopoly",
+            "maker": "Top hat guy",
             "gamer": 1,
-            "game_type": 1
-            
-            
+            "gametype": 1,
+            "number_of_players": 4,
+            "skill_level": 3
         }
     },
     {
@@ -15,18 +16,23 @@
         "pk": 2,
         "fields": {
             "title": "Scooby solves the mystery",
+            "maker": "Shaggy",
             "gamer": 1,
-            "game_type": 2
+            "gametype": 1,
+            "number_of_players": 4,
+            "skill_level": 4
         }
     },
     {
         "model": "levelupapi.game",
         "pk": 3,
         "fields": {
-            "title": "sorry",
+            "title": "Marbles",
+            "maker": "Mable Baylee",
             "gamer": 1,
-            "game_type": 1
-
+            "gametype": 2,
+            "number_of_players": 5,
+            "skill_level": 3
         }
     }
 ]
